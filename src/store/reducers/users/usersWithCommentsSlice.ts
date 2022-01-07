@@ -56,6 +56,7 @@ const usersWithCommentsSlice = createSlice({
             .map((item) => item.id),
         ];
       }
+      // eslint-disable-next-line no-sequences
     ),
       builder.addMatcher(
         postsApi.endpoints.getPostByUsersIds.matchFulfilled,
