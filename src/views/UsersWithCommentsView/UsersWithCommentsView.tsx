@@ -5,8 +5,8 @@ import UsersWithCommentsTable from './_components/UsersWithCommentsTable';
 const UsersWithCommentsView = () => {
   const { isLoading, isError } = useGetUsersQuery();
 
-  if (isError) return 'Error';
-  if (isLoading) return 'Loading...';
+  if (isError) return <h1>'Error'</h1>;
+  if (isLoading) return <h1>'Loading...'</h1>;
 
   return <UsersWithCommentsTable />;
 };

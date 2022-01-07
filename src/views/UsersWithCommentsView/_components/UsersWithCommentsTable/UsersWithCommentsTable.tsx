@@ -45,8 +45,8 @@ const UsersWithCommentsTable = () => {
     dispatch(loadMoreUsers());
   };
 
-  if (isErrorComments || isErrorPosts) return 'Error';
-  if (isLoadingComments || isLoadingPosts) return 'Loading...';
+  if (isErrorComments || isErrorPosts) return <h1>Error</h1>;
+  if (isLoadingComments || isLoadingPosts) return <h1>Loading...</h1>;
 
   return (
     <>
@@ -54,10 +54,10 @@ const UsersWithCommentsTable = () => {
       {!areAllUsersVisible && (
         <button
           type="button"
-          className="inline-block px-6 py-2.5 bg-purple-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-lg hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+          className="inline-block fixed bottom-0 left-1/2 transform -translate-x-1/2  px-6 py-2.5 bg-purple-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-lg hover:bg-purple-700 transition duration-150 ease-in-out"
           onClick={handleLoadMoreUsers}
         >
-          Load more users
+          Load more users & comments
         </button>
       )}
     </>
