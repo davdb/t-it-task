@@ -1,10 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
-import usersWithCommentsSlice from './reducers/users/usersWithCommentsSlice';
-import jsonplaceholderService from './services/jsonplaceholderService';
+
+import jsonplaceholderService from 'store/services/jsonplaceholderService';
+import usersListSlice from 'store/reducers/users/usersListSlice';
+import commentsListSlice from 'store/reducers/comments/commentsListSlice';
 
 export const store = configureStore({
   reducer: {
-    usersWithCommentsSlice: usersWithCommentsSlice,
+    usersListSlice: usersListSlice,
+    commentsListSlice: commentsListSlice,
     [jsonplaceholderService.reducerPath]: jsonplaceholderService.reducer,
   },
   middleware: (getDefaultMiddleware) => {

@@ -1,10 +1,10 @@
-import { createApi } from '@reduxjs/toolkit/query/react';
-import axiosBaseQuery from '../queries/axiosBaseQuery';
-import ExternalAPIs from '../types/ExternalAPIs';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import ExternalAPIs from 'store/types/ExternalAPIs';
+import Reducers from 'store/types/Reducers';
 
 const jsonplaceholderService = createApi({
-  reducerPath: 'jsonplaceholder',
-  baseQuery: axiosBaseQuery({
+  reducerPath: Reducers.JSONPLACEHOLDER,
+  baseQuery: fetchBaseQuery({
     baseUrl: ExternalAPIs.JSONPLACEHOLDER,
   }),
   endpoints: () => ({}),

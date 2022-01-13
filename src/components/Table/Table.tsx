@@ -1,20 +1,21 @@
-import React, { FunctionComponent } from 'react';
-import TableTemplate from '../../templates/TableTemplate';
-import TableHeader from './_components/TableHeader';
-import TableBody from './_components/TableBody';
-import UserWithComments from '../../store/reducers/users/_types/UsersWithComments';
+import React from 'react';
+import TableTemplate from 'templates/TableTemplate';
+import TableHeader, {
+  TableHeaders as TableHeadersType,
+} from 'components/Table/_components/TableHeader';
+import TableBody from 'components/Table/_components/TableBody';
 
-type Props = {
-  headers: string[];
-  data: UserWithComments[];
+type Props<DataType> = {
+  headers: TableHeadersType<DataType>;
+  rows: DataType[];
 };
 
-const Table: FunctionComponent<Props> = ({ headers, data }) => {
+const Table = <DataType,>({ headers, rows }: Props<DataType>) => {
   return (
     <TableTemplate>
       <table className="min-w-full divide-y divide-gray-200">
         <TableHeader headers={headers} />
-        <TableBody data={data} />
+        <TableBody rows={rows} />
       </table>
     </TableTemplate>
   );
