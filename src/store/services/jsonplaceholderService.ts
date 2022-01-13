@@ -1,7 +1,4 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
-import axiosBaseQuery from 'store/queries/axiosBaseQuery';
-
 import ExternalAPIs from 'store/types/ExternalAPIs';
 import Reducers from 'store/types/Reducers';
 

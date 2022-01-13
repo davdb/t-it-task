@@ -38,7 +38,7 @@ const usePaginationManager = (
       }
       setPaginationDotItemLeft(true);
     }
-  }, [page]);
+  }, [page, totalPageCount]);
 
   const handleChangePage = (page: number) => dispatch(changePage(page));
 
