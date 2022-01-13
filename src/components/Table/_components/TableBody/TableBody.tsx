@@ -1,13 +1,13 @@
 import React from 'react';
-import TableRow from './_components/TableRow';
+import TableRow from 'components/Table/_components/TableBody/_components/TableRow';
 
 type Props<DataType> = {
-  data: DataType[];
+  rows: DataType[];
 };
 
-const TableBody = <DataType,>({ data }: Props<DataType>) => (
+const TableBody = <DataType,>({ rows }: Props<DataType>) => (
   <tbody className="bg-white divide-y divide-gray-200">
-    {data.map((row, key) => (
+    {rows.map((row, key) => (
       <TableRow row={row} key={key} />
     ))}
   </tbody>
